@@ -1178,6 +1178,12 @@ focus.field[Bonus].value += 2</eval>
     <tag group="AllowRCust" tag="rHalfGiant"/>
     <tag group="RaReplace" tag="raNatPsion"/>
     <tag group="RaReplace" tag="raSurvivor"/>
+    <eval phase="PostAttr" priority="10000"><![CDATA[
+      doneif (tagis[Helper.SpcDisable] <> 0)
+      #applybonus[cmbRacial, hero.child[manBullRus], field[abValue].value]
+      #applybonus[cmbRacial, hero.child[manOverrun], field[abValue].value]
+      #applybonus[cmbRacial, hero.child[manTrip], field[abValue].value]
+    ]]></eval>
     </thing>
   <thing id="raPUHGLib" name="Liberty or Death" description="The history of the half-giants speaks of them once being an enslaved race. Some half-giants have a built-in defense against being subjugated against their will. Half-giants with this bonus gain a +2 racial bonus on saving throws against mind-affecting effects. This trait replaces the Fire Acclimated trait." compset="AltRaceTrt" summary="+2 racial bonus on saving throws against mind-affecting effects." uniqueness="unique">
     <usesource source="pPsiUn"/>
